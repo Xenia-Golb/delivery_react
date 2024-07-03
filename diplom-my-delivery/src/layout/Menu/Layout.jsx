@@ -2,8 +2,20 @@ import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.css';
 import Button from '../../components/Button/Button';
 import cn from 'classnames';
+// import { connect } from 'react-redux';
+// import { incrementCartItem } from '../../actions/cartActions';
+
+
 
 function Layout() {
+    // const mapStateToProps = state => ({
+    //     count: state.cart.count
+    // });
+
+    // const mapDispatchToProps = dispatch => ({
+    //     incrementCartItem: () => dispatch(incrementCartItem()),
+    // });
+
     return (<div className={styles['layout']}>
         <div className={styles['sidebar']}>
 
@@ -28,6 +40,7 @@ function Layout() {
                 )} to='/cart'>
                     <img src="/cart-icon.svg" alt="logo" />
                     Cart</NavLink>
+
             </div>
             <Button className={styles['exit']}>
                 <img src="/exit-icon.svg" alt="exit" />
@@ -39,5 +52,6 @@ function Layout() {
         </div>
     </div>);
 }
-
 export default Layout;
+// export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+
