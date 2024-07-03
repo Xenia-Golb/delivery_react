@@ -41,7 +41,9 @@
 }
 
 .user {
-    margin-bottom: 46px;
+    margin-bottom: 56px;
+
+
 }
 
 .avatar {
@@ -69,8 +71,6 @@
 .content {
     padding: 40px 60px;
     width: 100%;
-    background-color: var(--background-color);
-
 }
 
 .cart-count {

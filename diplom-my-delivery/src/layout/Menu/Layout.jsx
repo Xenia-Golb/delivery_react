@@ -6,6 +6,7 @@ import cn from 'classnames';
 function Layout() {
     return (<div className={styles['layout']}>
         <div className={styles['sidebar']}>
+
             <div className={styles['user']}>
                 <img className={styles['avatar']} src="/avatar.svg" alt="avatar" />
                 <div className={styles['name']}>Mrs. Golbraykh</div>

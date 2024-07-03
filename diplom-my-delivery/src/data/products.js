@@ -12,10 +12,10 @@ export const products = [
         rating: 4.8, price: 3.49, image: '/hot-dog.svg'
     },
     {
-        id: 4, title: 'Pancakes', description: 'These are round, thick pancakes that are made from flour, milk, eggs and sugar. ', rating: 4.6, price: 2.99, image: '/pizza-pep.svg'
+        id: 4, title: 'Pancakes', description: 'These are round, thick pancakes that are made from flour, milk, eggs and sugar. ', rating: 4.6, price: 2.99, image: '/pancakes.svg'
     },
     {
-        id: 5, title: 'Asian noodles', description: 'It can be made from various types of grains, including rice, wheat, buckwheat and other types of flour.', rating: 4.9, price: 3.99, image: '/sandwich.svg'
+        id: 5, title: 'Asian noodles', description: 'It can be made from various types of grains, including rice, wheat, buckwheat and other types of flour.', rating: 4.9, price: 3.99, image: '/asian-noodles.svg'
     }
     , {
         id: 6, title: 'Burger', description: 'This burger is a perfect combination of juicy meat patty, crispy lettuce, ripe tomatoes, creamy cheese, and aromatic onions, all sandwiched between two soft and fluffy buns.  ', rating: 4.7, price: 4.99, image: '/burger.svg'
