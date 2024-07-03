@@ -5,6 +5,7 @@ import Input from '../../components/Input/Input';
 import styles from './Login.module.css';
 
 function Login() {
+
     const OnSubmitForm = (e) => {
         e.preventDefault();
         console.log(e);
@@ -17,6 +18,7 @@ function Login() {
                     Your email
                 </label>
                 <Input
+                    name="email"
                     id="email"
                     placeholder="example@mail.com" />
             </div>
@@ -25,13 +27,14 @@ function Login() {
                     Your password
                 </label>
                 <Input
+                    name="password"
                     id="password"
                     type="password"
                     placeholder="password" />
             </div>
         </form>
         <div className={styles['links']}>
-            <Button appearence='big'>Sign in</Button>
+            <Button onClick={OnSubmitForm} appearence='big'>Sign in</Button>
             <div>No account? </div>
             <Link to="/auth/register">Sign up</Link>
         </div>
