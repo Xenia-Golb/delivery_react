@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Menu from './pages/Menu/Menu.jsx';
 import Cart from './pages/Cart/Cart.jsx';
 import Error from './pages/Error/Error.jsx';
 import Layout from './layout/Menu/Layout.jsx';
 import Product from './pages/Product/Product.jsx';
+import AuthLayout from './layout/Auth/AuthLayout.jsx';
+import Login from './pages/Login/Login.jsx';
+import Register from './pages/Register/Register.jsx';
+
+const Menu = lazy(() => import('./pages/Menu/Menu.jsx'));
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -18,11 +23,25 @@ const router = createBrowserRouter([
       },
       {
         path: '/',
-        element: <Menu />
+        element: <Suspense fallback={<>Загрузка...</>}><Menu /></Suspense>
       },
       {
         path: '/product/:id',
-        element: <Product />
+        element: <Product />,
+        errorElement: <div>Ошибка</div>
+      }
+    ]
+  },
+  {
+    path: '/auth',
+    element: <AuthLayout />,
+    children: [
+      {
+        path: 'login',
+        element: <Login />
+      }, {
+        path: 'register',
+        element: <Register />
       }
     ]
   },
