@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
 import styles from './ProductCard.module.css';
 import { useDispatch } from 'react-redux';
-import { incrementCartItem } from '../../actions/cartActions';
+import { addItem } from '../../reducers/cart.slice';
+
+
 
 function ProductCard({ id, title, description, price, rating, image }) {
+
     const dispatch = useDispatch();
 
-    const mapDispatchToProps = dispatch => ({
-        incrementCartItem: () => dispatch(incrementCartItem())
-    });
+    const add = (e) => {
+        e.preventDefault();
+        dispatch(addItem(id));
+    };
 
     return (
         <Link to={`/product/${id}`} className={styles['link']}>
@@ -18,7 +22,7 @@ function ProductCard({ id, title, description, price, rating, image }) {
                         {price}&nbsp;
                         <span className={styles['currency']}>$</span>
                     </div>
-                    <button onClick={mapDispatchToProps} className={styles['add-to-cart']}>
+                    <button onClick={add} className={styles['add-to-cart']}>
                         <img src="/cart-button-icon.svg" alt="add" />
                     </button>
                     <div className={styles['rating']}>

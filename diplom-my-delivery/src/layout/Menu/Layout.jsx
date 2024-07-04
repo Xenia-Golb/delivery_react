@@ -2,14 +2,15 @@ import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.css';
 import Button from '../../components/Button/Button';
 import cn from 'classnames';
+import { useSelector } from 'react-redux';
 
 
 
 
 function Layout() {
-    const mapStateToProps = state => ({
-        count: state.cart.count
-    });
+    const ItemSelector = state => state.cartItem.items;
+    const items = useSelector(ItemSelector);
+    let itemsLength = items.length;
 
     return (<div className={styles['layout']}>
         <div className={styles['sidebar']}>
@@ -34,7 +35,7 @@ function Layout() {
                     }
                 )} to='/cart'>
                     <img src="/cart-icon.svg" alt="logo" />
-                    Cart</NavLink>
+                    Cart  <span className={styles['cart-count']}>{itemsLength}</span> </NavLink>
 
             </div>
             <Button className={styles['exit']}>
@@ -48,5 +49,5 @@ function Layout() {
     </div>);
 }
 export default Layout;
-// export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+
 
