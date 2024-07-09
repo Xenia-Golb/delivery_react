@@ -1,0 +1,119 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.back-btn {
+    width: 2.48rem;
+    height: 2.48rem;
+    border: none;
+    font-size: 1.2rem;
+    box-shadow: 0.31rem 0.63rem 1.25rem 0rem rgba(211, 209, 216, 0.3);
+    background: transparent;
+}
+
+.back-btn:hover {
+    cursor: pointer;
+}
+
+
+.product {
+    margin-top: 100px;
+    display: flex;
+    padding-left: 150px;
+    flex-direction: row;
+    justify-content: start;
+    gap: 70px;
+    align-items: center;
+}
+
+.image {
+    width: 28.06rem;
+    height: 15.81rem;
+    border-radius: 100%;
+    padding: 30px 15px;
+
+}
+
+.image:hover {
+    cursor: pointer;
+    box-shadow: 18.21428680419922px 18.21428680419922px 36.42857360839844px 0px rgba(194, 119, 22, 0.25);
+    transform: scale(1.02);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 289px;
+    color: rgb(91, 91, 94);
+    font-size: 0.91rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.price {
+    margin-left: 180px;
+    background: var(--white-color);
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: #111719;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.currency {
+    color: var(--primary-color);
+}
+
+
+.rating {
+    margin-left: 180px;
+    background: var(--white-color);
+    padding: 3px 8px;
+    border-radius: 20px;
+    color: #111719;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    box-shadow: 0px 6.0714287757873535px 24.285715103149414px 0px rgba(254, 114, 76, 0.20);
+}
+
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.recommendations {
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 120%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 95px;
+}
