@@ -1,7 +1,9 @@
+import Headling from '../../components/Headling/Headling';
 
 function Error() {
     return (<>
-        error
+        <Headling >Page not found</Headling>
+        <img style={{ display: 'block', margin: '0 auto' }} src="/error.gif" alt="error" />
     </>);
 }
 

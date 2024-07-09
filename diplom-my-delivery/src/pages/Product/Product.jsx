@@ -14,9 +14,9 @@ function Product() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const add = (e) => {
+    const addProduct = (e) => {
         e.preventDefault();
-        dispatch(addItem(product));
+        dispatch(addItem(product.id));
         navigate('/cart');
     };
 
@@ -24,7 +24,7 @@ function Product() {
         <div className={styles['header']} >
             <button onClick={() => navigate(-1)} className={styles['back-btn']} ><img src="/left.svg" alt="back" /></button>
             <Headling>{product.title}</Headling>
-            <Button onClick={add} appearance='primary'> <img src="/product-cart.svg" alt="cart" />&nbsp; Add to cart</Button></div>
+            <Button onClick={addProduct} appearance='primary'> <img src="/product-cart.svg" alt="cart" />&nbsp; Add to cart</Button></div>
         <div className={styles['product']}>
             <img className={styles['image']} src={product.image} alt={product.title} />
             <div className={styles['info']}>

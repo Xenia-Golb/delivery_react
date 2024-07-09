@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: '/product/:id',
         element: <Product />,
-        errorElement: <div>Ошибка</div>
+        errorElement: <Error />
       },
       {
         path: '/success',

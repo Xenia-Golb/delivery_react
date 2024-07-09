@@ -8,7 +8,6 @@ import { addItem } from '../../reducers/cart.slice';
 function ProductCard({ id, title, description, price, rating, image }) {
 
     const dispatch = useDispatch();
-
     const add = (e) => {
         e.preventDefault();
         dispatch(addItem(id));
