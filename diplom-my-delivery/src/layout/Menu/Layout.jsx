@@ -8,9 +8,7 @@ import { useSelector } from 'react-redux';
 
 
 function Layout() {
-    const ItemSelector = state => state.cartItem.items;
-    const items = useSelector(ItemSelector);
-    let itemsLength = items.length;
+    const items = useSelector(state => state.cartItem.items);
 
     return (<div className={styles['layout']}>
         <div className={styles['sidebar']}>
@@ -35,7 +33,7 @@ function Layout() {
                     }
                 )} to='/cart'>
                     <img src="/cart-icon.svg" alt="logo" />
-                    Cart  <span className={styles['cart-count']}>{itemsLength}</span> </NavLink>
+                    Cart  <span className={styles['cart-count']}>{items.reduce((acc, item) => acc += item.count, 0)}</span>  </NavLink>
 
             </div>
             <Button className={styles['exit']}>
