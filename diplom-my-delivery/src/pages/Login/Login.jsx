@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Headling from '../../components/Headling/Headling';
 import Input from '../../components/Input/Input';
 import styles from './Login.module.css';
 
 function Login() {
+    const navigate = useNavigate();
 
     const OnSubmitForm = (e) => {
         e.preventDefault();
@@ -34,7 +35,7 @@ function Login() {
             </div>
         </form>
         <div className={styles['links']}>
-            <Button onClick={OnSubmitForm} appearence='big'>Sign in</Button>
+            <Button appearence='big' onClick={() => navigate('/')} >Sign in</Button>
             <div>No account? </div>
             <Link to="/auth/register">Sign up</Link>
         </div>

@@ -21,6 +21,11 @@ svg {
 
 }
 
+.card:hover {
+    box-shadow: 18.21428680419922px 18.21428680419922px 36.42857360839844px 0px rgba(194, 119, 22, 0.25);
+    transform: scale(1.02);
+}
+
 .footer {
     padding: 12px;
 }

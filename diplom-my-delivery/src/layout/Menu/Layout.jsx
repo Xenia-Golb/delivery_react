@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { NavLink, Outlet } from 'react-router-dom';
 import styles from './Layout.module.css';
 import Button from '../../components/Button/Button';
@@ -9,6 +10,7 @@ import { useSelector } from 'react-redux';
 
 function Layout() {
     const items = useSelector(state => state.cartItem.items);
+    const navigate = useNavigate();
 
     return (<div className={styles['layout']}>
         <div className={styles['sidebar']}>
@@ -36,7 +38,7 @@ function Layout() {
                     Cart  <span className={styles['cart-count']}>{items.reduce((acc, item) => acc += item.count, 0)}</span>  </NavLink>
 
             </div>
-            <Button className={styles['exit']}>
+            <Button onClick={() => navigate('/auth/login')} className={styles['exit']}>
                 <img src="/exit-icon.svg" alt="exit" />
                 Выход
             </Button>

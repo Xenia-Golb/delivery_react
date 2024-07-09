@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Headling from '../../components/Headling/Headling';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
@@ -6,6 +6,7 @@ import styles from '../Login/Login.module.css';
 
 
 function Register() {
+    const navigate = useNavigate();
     const submit = (e) => {
         e.preventDefault();
         console.log(e.target);
@@ -26,7 +27,7 @@ function Register() {
                     <label htmlFor="name">Your name</label>
                     <Input id="name" name='name' placeholder='Name' />
                 </div>
-                <Button appearence="big">Sign up</Button>
+                <Button onClick={() => navigate('/')} appearence="big">Sign up</Button>
             </form>
             <div className={styles['links']}>
                 <div>Already have an account? </div>

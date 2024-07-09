@@ -4,7 +4,7 @@ import styles from './AuthLayout.module.css';
 function AuthLayout() {
     return (<div className={styles['layout']}>
         <div className={styles['logo']}>
-            <img src="/logo.jpg" alt="logo" />
+            <img src="/auth.gif" alt="logo" />
         </div>
         <div className={styles['content']}>
             <Outlet />

@@ -1,12 +1,17 @@
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import styles from './Cart.module.css';
 import Headling from '../../components/Headling/Headling';
 import CartItem from '../../components/CartItem/CartItem';
 import { products } from '../../data/products';
 import Button from '../../components/Button/Button';
+import { clean } from '../../reducers/cart.slice';
 
 const DELIVERY_FEE = 10;
 function Cart() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const items = useSelector(state => state.cartItem.items);
     const total = items.map(i => {
         const product = products.find(p => p.id === i.id);
@@ -16,7 +21,8 @@ function Cart() {
         return i.count * product.price;
     }).reduce((acc, i) => acc += i, 0);
     const checkout = () => {
-        console.log('checkout');
+        dispatch(clean());
+        navigate('/success');
     };
 
     return (<>
