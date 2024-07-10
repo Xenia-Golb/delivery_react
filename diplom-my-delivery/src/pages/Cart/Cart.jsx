@@ -25,33 +25,39 @@ function Cart() {
         navigate('/success');
     };
 
-    return (<>
+    return (<section >
         <Headling className={styles['headling']}>Cart</Headling>
-        {items.map(i => {
-            const product = products.find((item) => item.id === i.id);
-            if (!product) {
-                return;
-            }
-            return <CartItem count={i.count} key={product.id} {...product} />;
-        })}
-        <div className={styles['line']}>
-            <div className={styles['text']}>Total</div>
-            <div className={styles['price']}>{total}&nbsp;<span>$</span></div>
+        <div className={styles['cart']}>
+            <div className="cart-left">
+                {items.map(i => {
+                    const product = products.find((item) => item.id === i.id);
+                    if (!product) {
+                        return;
+                    }
+                    return <CartItem count={i.count} key={product.id} {...product} />;
+                })}
+                <div className={styles['line']}>
+                    <div className={styles['text']}>Total</div>
+                    <div className={styles['price']}>{total}&nbsp;<span>$</span></div>
+                </div>
+                <hr className={styles['hr']} />
+                <div className={styles['line']}>
+                    <div className={styles['text']}>Delivery</div>
+                    <div className={styles['price']}>{DELIVERY_FEE}&nbsp;<span>$</span></div>
+                </div>
+                <hr className={styles['hr']} />
+                <div className={styles['line']}>
+                    <div className={styles['text']}>Grand total <span className={styles['total-count']}>({items.length})</span></div>
+                    <div className={styles['price']}>{total + DELIVERY_FEE}&nbsp;<span>$</span></div>
+                </div>
+                <div className={styles['checkout']}>
+                    <Button appearence="big" onClick={checkout}>Checkout</Button>
+                </div>
+            </div>
+
+            <div className="cart-right"><img src="/big-cart.svg" alt="cart" /></div>
         </div>
-        <hr className={styles['hr']} />
-        <div className={styles['line']}>
-            <div className={styles['text']}>Delivery</div>
-            <div className={styles['price']}>{DELIVERY_FEE}&nbsp;<span>$</span></div>
-        </div>
-        <hr className={styles['hr']} />
-        <div className={styles['line']}>
-            <div className={styles['text']}>Grand total <span className={styles['total-count']}>({items.length})</span></div>
-            <div className={styles['price']}>{total + DELIVERY_FEE}&nbsp;<span>$</span></div>
-        </div>
-        <div className={styles['checkout']}>
-            <Button appearence="big" onClick={checkout}>Checkout</Button>
-        </div>
-    </>);
+    </section>);
 }
 
 export default Cart;

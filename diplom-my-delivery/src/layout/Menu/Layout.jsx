@@ -38,8 +38,15 @@ function Layout() {
                 )} to='/cart'>
                     <img src="/cart-icon.svg" alt="logo" />
                     Cart  <span className={styles['cart-count']}>{items.reduce((acc, item) => acc += item.count, 0)}</span>  </NavLink>
-
+                <NavLink className={({ isActive }) => cn(styles['link'],
+                    {
+                        [styles.active]: isActive
+                    }
+                )} to='/contacts'>
+                    <img src="/contacts.svg" alt="logo" />
+                    Contacts</NavLink>
             </div>
+
             <Button onClick={() => navigate('/auth/login')} className={styles['exit']}>
                 <img src="/exit-icon.svg" alt="exit" />
                 Выход

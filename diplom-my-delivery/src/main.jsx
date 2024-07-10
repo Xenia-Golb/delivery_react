@@ -12,6 +12,7 @@ import Register from './pages/Register/Register.jsx';
 import { Provider } from 'react-redux';
 import { store } from './redux/store.js';
 import { Success } from './pages/Success/Success.jsx';
+import Contacts from './pages/Contacts/Contacts.jsx';
 
 const Menu = lazy(() => import('./pages/Menu/Menu.jsx'));
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/success',
         element: <Success />
+      },
+      {
+        path: '/contacts',
+        element: <Contacts />
       }
     ]
   },
