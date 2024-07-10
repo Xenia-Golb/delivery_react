@@ -25,7 +25,9 @@ function Menu() {
     return (<section className={styles['menu']}>
         <div className={styles['head']}>
             <Headling className={styles['menu-head']}>
-                <button className={styles['menu-button']} ><img src="/menu.svg" alt="menu" onClick={handleButtonClick}></img> </button>
+                <button className={styles['menu-button']} >
+                    <img src="/menu.svg" alt="menu" onClick={handleButtonClick}></img>
+                </button>
                 Menu
             </Headling>
             {isDetailVisible && <SortOptions />}

@@ -3,35 +3,53 @@ import Button from '../../components/Button/Button';
 import Headling from '../../components/Headling/Headling';
 import Input from '../../components/Input/Input';
 import styles from './Login.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateField, setErrors } from '../../redux/slices/form.slice';
 
 function Login() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const formData = useSelector((state) => state.form.formData);
+    const errors = useSelector((state) => state.form.errors);
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        dispatch(updateField({ field: name, value }));
+    };
 
-    const OnSubmitForm = (e) => {
-        e.preventDefault();
-        console.log(e);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch(setErrors());
+        if (Object.keys(errors).length === 0) {
+            // Proceed with form submission
+            console.log('Form submitted:', formData);
+        }
     };
     return (<div className={styles['login']}  >
         <Headling>Sign in</Headling>
-        <form className={styles['form']} onSubmit={OnSubmitForm}>
+        <form className={styles['form']} onSubmit={handleSubmit}>
             <div className={styles['field']}>
                 <label htmlFor="email">
                     Your email
                 </label>
                 <Input
-                    name="email"
+                    type="email"
                     id="email"
-                    placeholder="example@mail.com" />
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange} />
+                {errors.email && <span>{errors.email}</span>}
             </div>
             <div className={styles['field']}>
                 <label htmlFor="password">
                     Your password
                 </label>
                 <Input
-                    name="password"
-                    id="password"
                     type="password"
-                    placeholder="password" />
+                    id="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange} />
+                {errors.password && <span>{errors.password}</span>}
             </div>
         </form>
         <div className={styles['links']}>
