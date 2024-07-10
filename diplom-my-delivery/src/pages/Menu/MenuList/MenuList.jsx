@@ -1,19 +1,22 @@
 import ProductCard from '../../../components/ProductCard/ProductCard';
 import styles from './MenuList.module.css';
-import { products } from '../../../data/products';
-// import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function MenuList() {
-    // const [filteredItems, setFilteredItems] = useState(products);
-    // useEffect(() => {
-    //     const filtered = products.filter((item) => item.title.toLowerCase().includes(searchQuery.toLowerCase()));
-    //     setFilteredItems(filtered);
-    // }, [products, searchQuery]);
+    const dishes = useSelector((state) => state.dishes.dishes);
+    const searchQuery = useSelector((state) => state.dishes.searchQuery);
+    const filteredDishes = dishes.filter((dish) =>
+        dish.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     return (<div className={styles['wrapper']}>
-        {products.map((product) => {
-            return <ProductCard key={product.id} {...product} />;
-        })}
+        {filteredDishes.length > 0 ? (
+            filteredDishes.map((dish) => (
+                <ProductCard key={dish.id} {...dish} />
+            ))
+        ) : (
+            <div className={styles['no-dish']}>No dishes found</div>
+        )}
     </div>);
 }
 

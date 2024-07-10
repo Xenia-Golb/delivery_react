@@ -1,6 +1,6 @@
 import styles from './CartItem.module.css';
 import { useDispatch } from 'react-redux';
-import { addItem, deleteItem, removeItem } from '../../reducers/cart.slice';
+import { addItem, deleteItem, removeItem } from '../../redux/slices/cart.slice';
 
 
 function CartItem({ id, image, title, price, count }) {

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './ProductCard.module.css';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../reducers/cart.slice';
+import { addItem } from '../../redux/slices/cart.slice';
 
 
 

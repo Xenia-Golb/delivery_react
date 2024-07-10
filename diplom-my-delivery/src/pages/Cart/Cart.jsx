@@ -6,9 +6,9 @@ import Headling from '../../components/Headling/Headling';
 import CartItem from '../../components/CartItem/CartItem';
 import { products } from '../../data/products';
 import Button from '../../components/Button/Button';
-import { clean } from '../../reducers/cart.slice';
+import { clean } from '../../redux/slices/cart.slice';
 
-const DELIVERY_FEE = 10;
+const DELIVERY_FEE = 3.5;
 function Cart() {
     const navigate = useNavigate();
     const dispatch = useDispatch();

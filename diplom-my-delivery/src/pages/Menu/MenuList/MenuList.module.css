@@ -6,3 +6,12 @@
     align-content: center;
     align-items: center;
 }
+
+.no-dish {
+    margin-top: 100px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 120%;
+    color: var(--text-color);
+
+}

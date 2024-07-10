@@ -1,8 +1,33 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+DIPLOM-MY-DELIVERY/
+│
+├── public/
+│   ├── img / 
+│
+├── src/
+│   ├── components/
+│   │   ├── Button /     |--- CartItem.module.css
+│   │   ├── CartItem/ ___|
+│   │   ├── ...          |--- CartItem.jsx
+│   │
+│   ├── pages/
+│   │   ├── Cart /
+│   │   ├── Error /    |--- Login.module.css 
+│   │   ├── Login / ---|
+│   │   ├── ...        |--- Login.jsx
+│   │
+│   ├── redux/
+│   │   ├── store.js
+│   │   ├── slices/
+│   │   │   ├── cart.slice.js
+│   │   │   ├── ...
+│   │             
+│   ├-- data / ---|--data.js
+|   |-- layout / --------------|
+│   ├── main.jsx               |---- Auth /---|
+│   ├── index.css                             |--- AuthLayout.jsx
+│                                             |
+|-- .gitignore                                |--- AuthLayout.module.css
+|-- index.html
+├── package.json
+├── vite.config.js
+|__ .eslintrc.cjs

@@ -6,7 +6,7 @@ import Button from '../../components/Button/Button';
 import styles from './Product.module.css';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../reducers/cart.slice';
+import { addItem } from '../../redux/slices/cart.slice';
 
 function Product() {
     const { id } = useParams();

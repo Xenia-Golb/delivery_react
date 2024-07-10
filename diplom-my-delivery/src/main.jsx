@@ -10,7 +10,7 @@ import AuthLayout from './layout/Auth/AuthLayout.jsx';
 import Login from './pages/Login/Login.jsx';
 import Register from './pages/Register/Register.jsx';
 import { Provider } from 'react-redux';
-import { store } from './store/store.js';
+import { store } from './redux/store.js';
 import { Success } from './pages/Success/Success.jsx';
 
 const Menu = lazy(() => import('./pages/Menu/Menu.jsx'));
