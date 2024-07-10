@@ -3,7 +3,8 @@ import { products } from '../../data/products';
 
 const initialState = {
     dishes: products,
-    searchQuery: ''
+    searchQuery: '',
+    sortBy: ''
 };
 
 const dishesSlice = createSlice({
@@ -12,9 +13,12 @@ const dishesSlice = createSlice({
     reducers: {
         setSearchQuery: (state, action) => {
             state.searchQuery = action.payload;
+        },
+        setSortBy: (state, action) => {
+            state.sortBy = action.payload;
         }
     }
 });
 
-export const { setSearchQuery } = dishesSlice.actions;
+export const { setSearchQuery, setSortBy } = dishesSlice.actions;
 export default dishesSlice.reducer;

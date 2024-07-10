@@ -1,0 +1,17 @@
+.sort-select {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--text-color);
+    background-color: #FCFCFD;
+    border: 1px solid #EFEFEF;
+    box-shadow: 15px 20px 45px 0px rgba(233, 233, 233, 0.25);
+    border-radius: 10px;
+    padding: 16px 34px 19px 44px;
+    min-width: 200px;
+}
+
+.sort-select:hover {
+    cursor: pointer;
+    box-shadow: 18.21428680419922px 18.21428680419922px 36.42857360839844px 0px rgba(194, 119, 22, 0.25);
+}
