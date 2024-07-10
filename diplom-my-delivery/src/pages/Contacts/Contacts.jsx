@@ -25,7 +25,7 @@ function Contacts() {
                 </div>
                 <div className={styles['contacts-tit']}>
                     FOLLOW US
-                    <Link to={'https://t.me/xenia_golb'} ><img src="/telegram.svg" alt="twitter" /></Link>
+                    <Link to={'https://t.me/xenia_golb'} ><img src="/telegram.svg" alt="telegram" /></Link>
                 </div>
             </div>
             <MapComponent />

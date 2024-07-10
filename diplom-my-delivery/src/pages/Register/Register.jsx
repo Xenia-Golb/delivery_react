@@ -4,7 +4,7 @@ import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import styles from '../Login/Login.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateField, setErrors } from '../../redux/slices/form.slice';
+import { updateField, setErrors, clearForm } from '../../redux/slices/form.slice';
 
 
 function Register() {
@@ -13,16 +13,17 @@ function Register() {
     const formData = useSelector((state) => state.form.formData);
     const errors = useSelector((state) => state.form.errors);
     const handleChange = (event) => {
-        const { name, value } = event.target;
-        dispatch(updateField({ field: name, value }));
+        const { id, value } = event.target;
+        dispatch(updateField({ field: id, value }));
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch(setErrors());
-        if (Object.keys(errors).length === 0) {
-            // Proceed with form submission
+        const hasErrors = Object.values(errors).some((error) => error !== '');
+        if (!hasErrors) {
             console.log('Form submitted:', formData);
+            dispatch(clearForm());
         }
     };
     return (

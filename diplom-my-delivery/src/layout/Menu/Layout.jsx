@@ -49,7 +49,7 @@ function Layout() {
 
             <Button onClick={() => navigate('/auth/login')} className={styles['exit']}>
                 <img src="/exit-icon.svg" alt="exit" />
-                Выход
+                Exit
             </Button>
         </div>
         <div className={styles['content']}>

@@ -39,9 +39,17 @@ const formSlice = createSlice({
                 if (error) errors[field] = error;
             });
             state.errors = errors;
+        },
+        clearForm: (state) => {
+            state.formData = {
+                name: '',
+                email: '',
+                message: ''
+            };
+            state.errors = {};
         }
     }
 });
 
-export const { updateField, setErrors } = formSlice.actions;
+export const { updateField, setErrors, clearForm } = formSlice.actions;
 export default formSlice.reducer;

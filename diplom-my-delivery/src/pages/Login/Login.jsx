@@ -4,7 +4,7 @@ import Headling from '../../components/Headling/Headling';
 import Input from '../../components/Input/Input';
 import styles from './Login.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateField, setErrors } from '../../redux/slices/form.slice';
+import { updateField, setErrors, clearForm } from '../../redux/slices/form.slice';
 
 function Login() {
     const navigate = useNavigate();
@@ -19,9 +19,10 @@ function Login() {
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch(setErrors());
-        if (Object.keys(errors).length === 0) {
-            // Proceed with form submission
+        const hasErrors = Object.values(errors).some((error) => error !== '');
+        if (!hasErrors) {
             console.log('Form submitted:', formData);
+            dispatch(clearForm());
         }
     };
     return (<div className={styles['login']}  >
