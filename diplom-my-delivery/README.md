@@ -17,4 +17,5 @@
 
 ## Структура проекта
 
-![]('../assets/structure.png')
+![structure](./public/structure.png)
+
