@@ -19,3 +19,5 @@
 
 ![structure](./public/structure.png)
 
+Сайт проекта: https://6692afc68d894f565f457c13--imaginative-bunny-403bda.netlify.app
+
