@@ -63,7 +63,7 @@
     margin-bottom: 70px;
 }
 
-@media (min-width: 769px) {
+@media (max-width: 1024px) {
     .cart {
         flex-direction: column;
         justify-content: center;

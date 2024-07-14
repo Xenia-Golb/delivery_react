@@ -23,7 +23,7 @@
     box-shadow: 18.21428680419922px 18.21428680419922px 36.42857360839844px 0px rgba(194, 119, 22, 0.25);
 }
 
-@media (min-width: 769px) {
+@media (max-width: 1024px) {
     .head {
         display: flex;
         justify-content: space-between;

@@ -89,7 +89,7 @@
     color: var(--white-color);
 }
 
-@media (min-width: 769px) {
+@media (max-width: 1024px) {
     .sidebar {
         width: 250px;
     }
