@@ -129,3 +129,30 @@
         margin-top: 80px;
     }
 }
+
+@media (max-width: 768px) {
+    .product {
+        margin-top: 0px;
+        display: flex;
+        padding-left: 0px;
+        flex-direction: column;
+        justify-content: start;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .recommendations {
+        margin-top: 50px;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: center;
+        align-items: flex-end;
+        margin-bottom: 40px;
+        gap: 30px;
+    }
+}

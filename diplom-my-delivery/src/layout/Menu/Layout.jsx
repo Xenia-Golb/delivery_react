@@ -5,10 +5,6 @@ import Button from '../../components/Button/Button';
 import cn from 'classnames';
 import { useSelector } from 'react-redux';
 
-
-
-
-
 function Layout() {
     const items = useSelector(state => state.cartItem.items);
     const navigate = useNavigate();
@@ -52,6 +48,36 @@ function Layout() {
                 Exit
             </Button>
         </div>
+        <div className={styles['menu-top']}>
+            <div className={styles['menu']}>
+                <NavLink className={({ isActive }) => cn(styles['link'],
+                    {
+                        [styles.active]: isActive
+                    }
+                )} to='/'>
+                    <img src="/menu-icon.svg" alt="logo" />
+                </NavLink>
+                <NavLink className={({ isActive }) => cn(styles['link'],
+                    {
+                        [styles.active]: isActive
+                    }
+                )} to='/cart'>
+                    <img src="/cart-icon.svg" alt="logo" />
+                    <span className={styles['cart-count']}>{items.reduce((acc, item) => acc += item.count, 0)}</span>  </NavLink>
+                <NavLink className={({ isActive }) => cn(styles['link'],
+                    {
+                        [styles.active]: isActive
+                    }
+                )} to='/contacts'>
+                    <img src="/contacts.svg" alt="logo" />
+                </NavLink>
+                <Button onClick={() => navigate('/auth/login')} className={styles['exit']}>
+                    <img src="/exit-icon.svg" alt="exit" />
+                </Button>
+            </div>
+
+        </div>
+
         <div className={styles['content']}>
             <Outlet />
         </div>

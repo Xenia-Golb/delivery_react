@@ -63,9 +63,20 @@
     margin-bottom: 70px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .cart {
         flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        flex-wrap: wrap;
+    }
+
+    .cart {
         justify-content: center;
         gap: 0px;
     }
