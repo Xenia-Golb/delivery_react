@@ -22,3 +22,19 @@
     align-items: center;
     justify-content: center;
 }
+
+@media (min-width: 768px) {
+    .layout {
+        display: flex;
+        min-height: 100vh;
+        max-width: 80vw;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .content {
+        border-left: none;
+        flex: 0;
+        margin-left: 40px;
+    }
+}

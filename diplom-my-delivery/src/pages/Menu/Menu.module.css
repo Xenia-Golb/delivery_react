@@ -22,3 +22,17 @@
     cursor: pointer;
     box-shadow: 18.21428680419922px 18.21428680419922px 36.42857360839844px 0px rgba(194, 119, 22, 0.25);
 }
+
+@media (min-width: 768px) {
+    .head {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .menu {
+        width: 70vw;
+    }
+}
