@@ -4,7 +4,7 @@ import styles from './Contacts.module.css';
 import MapComponent from '../../components/Map/Map';
 
 function Contacts() {
-    return (<>
+    return (<section className={styles['contacts']}>
         <Headling className={styles['headling']} >Contacts</Headling>
         <div className={styles['container']}>
             <div className={styles['contacts']}>
@@ -31,7 +31,7 @@ function Contacts() {
             <MapComponent />
         </div>
 
-    </>);
+    </section>);
 }
 
 export default Contacts;

@@ -55,3 +55,28 @@
         width: 100%;
     }
 }
+
+@media (max-width: 768px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contacts {
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .headling {
+        margin-bottom: 20px;
+    }
+
+
+}
